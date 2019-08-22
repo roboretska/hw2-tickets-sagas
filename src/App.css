@@ -1,0 +1,4 @@
+.flexible-list{
+  justify-content: stretch;
+  flex-wrap: wrap;
+}
