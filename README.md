@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#### To deploy server & front use 
-###### `npm run dev script`
+# To deploy server & front use 
+## `npm run dev script`
 
 
 
