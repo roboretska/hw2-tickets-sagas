@@ -1,15 +1,17 @@
 import {call, put, takeLatest} from 'redux-saga/effects';
 import {getTicketsListActions, getCurtActions} from '../actions'
-import * as mock from '../actions/mock'
+import * as API from '../API'
 
 function* initTickets() {
-    const tickets = yield call(mock.ticketsList);
+    const tickets = yield call(API.getTicketsList);
+    console.log(tickets);
     yield put(getTicketsListActions.success(tickets));
 }
 
 function* initCart() {
-    const tickets = yield call(mock.cartList);
-    yield put(getCurtActions.success(tickets));
+    const cart = yield call(API.getCart);
+    console.log(cart);
+    yield put(getCurtActions.success(cart));
 }
 
 export default function* watchTickets() {

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {connect} from 'react-redux'
 import {getTicketsListActions} from '../../actions'
 
-// import Ticket from '../Ticket'
+import Ticket from '../Ticket'
 
 import './TicketList.css'
 
@@ -12,7 +12,12 @@ const TicketList =  ({ticketsList, getTicketsList}) => {
     }, []);
     console.log(ticketsList);
     return <div className='ticket-list-container flexible-list'>
-        {ticketsList.map((ticket => <div>{ticket}</div>))}
+        {ticketsList.map((ticket =>
+            <Ticket
+                ticket={ticket}
+                fromList={true}
+            />
+        ))}
     </div>
 };
 

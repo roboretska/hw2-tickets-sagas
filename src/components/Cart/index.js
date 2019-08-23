@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux'
 import {getCurtActions} from '../../actions'
-// import Ticket from '../Ticket'
+import Ticket from '../Ticket'
 
 import './Cart.css'
 
@@ -10,7 +10,12 @@ const CartList =  ({cartList, getCart}) => {
         getCart();
     }, []);
     return <div className='cart-container  flexible-list'>
-        {cartList.map((ticket) => <div>{ticket}</div>)}
+        {cartList.map((ticket) =>
+            <Ticket
+                ticket={ticket}
+                fromList={true}
+            />
+        )}
     </div>
 };
 
