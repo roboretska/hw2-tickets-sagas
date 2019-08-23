@@ -1,8 +1,11 @@
-import {combineReducers} from 'redux'
+import {combineReducers} from 'redux';
+import {getTicketsListActions, getCurtActions} from '../actions'
+
 
 const ticketsList = (store = [], action) => {
     switch (action.type) {
-        case 'ADD_TO_TICKETS_LIST': {
+        case getTicketsListActions.SUCCESS: {
+            console.log('Tickets reducer');
             return [...action.payload]
         }
         default: return store
@@ -11,7 +14,7 @@ const ticketsList = (store = [], action) => {
 
 const cartList = (store = [], action) => {
     switch (action.type) {
-        case 'ADD_TO_CART_LIST': {
+        case getCurtActions.SUCCESS: {
             return [...action.payload]
         }
         default: return store
